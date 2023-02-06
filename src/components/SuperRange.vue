@@ -1,8 +1,15 @@
 <template>
     <div class="field">
         <button class="magic-circle" id="min" @click="minus">-</button>
-        <input type="range" class="main-slider-range" :min="min" :max="max" :value="value" steps="1">
-        <div class="slider"></div>
+        <input 
+            type="range" 
+            class="main-slider-range" 
+            :min="min" 
+            :max="max" 
+            :value="value" 
+            steps="1"
+            >
+        <output class="slider"></output>
         <button class="magic-circle" id="max" @click="plus">+</button>
     </div>
 </template>
@@ -94,6 +101,8 @@ input[type='range']::-webkit-slider-thumb {
     font-style: normal;
     font-size: 25px;
     align-items:center;
+    display: flex;
+    justify-content: center;
 }
 .magic-circle::selection {
     background: transparent;
@@ -128,6 +137,7 @@ input[type='range']::-webkit-slider-thumb {
   background: #FFF; /* WebKit/Blink Browsers */
 }
 .slider {
+    -webkit-user-select: none;
     position:absolute;
     font-family: 'Indie Flower';
     font-style: normal;
